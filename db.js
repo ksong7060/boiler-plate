@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/boilerplate',{
+const config = require('./config/key');
+
+mongoose.connect(config.mongoURI,{
     useNewUrlParser:true, useUnifiedTopology:true, useCreateIndex: true, useFindAndModify: false
     },(err) => {
         if(!err)
